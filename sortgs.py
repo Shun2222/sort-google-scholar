@@ -293,7 +293,7 @@ def main():
 
     # Save results
     if save_database:
-        fpath_csv = os.path.join("results", path,keyword.replace(' ','_')+"_"+startyear+"-"+endyear+'.csv')
+        fpath_csv = os.path.join("results", path,keyword.replace(' ','_')+"_"+start_year+"-"+end_year+'.csv')
         fpath_csv = fpath_csv[:MAX_CSV_FNAME]
         data_ranked.to_csv(fpath_csv, encoding='utf-8')
 
