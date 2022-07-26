@@ -277,7 +277,7 @@ def main():
         data_ranked = data.sort_values(by=sortby_column, ascending=False)
     except Exception as e:
         print('Column name to be sorted not found. Sorting by the number of citations...')
-        data_ranked = data.sort_values(by='Citations', ascending=False)
+        data_ranked = data.sort_values(by='cit/year', ascending=False)
         print(e)
 
     # Print data
@@ -293,7 +293,7 @@ def main():
 
     # Save results
     if save_database:
-        fpath_csv = os.path.join("results", path,keyword.replace(' ','_')+"_"+start_year+"-"+end_year+'.csv')
+        fpath_csv = os.path.join(path,"results"+keyword.replace(' ','_')+"_"+str(start_year)+"-"+str(end_year)+'.csv')
         fpath_csv = fpath_csv[:MAX_CSV_FNAME]
         data_ranked.to_csv(fpath_csv, encoding='utf-8')
 
